@@ -1,0 +1,33 @@
+﻿@page
+@addTagHelper*, Microsoft.AspNetCore.Mvc.TagHelpers
+@model EqSolveWeb.Pages.IndexModel;
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Main Page";
+    ViewData["Answer"] = Model.Answer;
+}
+
+<p>
+    Equation accepts the following: <br />
+    integers and decimals (23, 1.223) <br />
+    +, -, *, /, ^ <br />
+    left and right parentheses ( ) <br />
+    pi, e, x, y, z <br />
+    ln, log <br />
+    sin, cos, tan, arcsin, arccos, arctan <br />
+    factoral !
+</p>
+<br />
+
+<form method="post">
+    <p>Enter your equation here:</p>
+    <p><input type="text" asp-for="Equation"/></p>
+    <p><input type="text" asp-for="X"/> = X</p>
+    <p><input type="text" asp-for="Y"/> = Y</p>
+    <p><input type="text" asp-for="Z"/> = Z</p>
+    <p><button type="submit">Solve!</button></p>
+</form>
+<br />
+@{
+    <p>Answer: @ViewData["Answer"]</p>
+}
